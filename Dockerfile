@@ -66,5 +66,10 @@ RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 RUN echo "source /var/lib/build/devel/setup.bash" >> ~/.bashrc
 
 # Define the entry point for the container
-ENTRYPOINT ["/entrypoint.sh"]
+# ENTRYPOINT ["/entrypoint.sh"]
 # CMD ["bash"]
+
+ENTRYPOINT ["bash", "-c", "set -e \
+&& . ./devel/setup.bash \
+&& roslaunch ouster_ros sensor.launch \"$@\" \
+", "ros-entrypoint"]
