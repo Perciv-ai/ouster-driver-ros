@@ -67,4 +67,4 @@ RUN echo "source /var/lib/build/devel/setup.bash" >> ~/.bashrc
 
 # Define the entry point for the container
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["bash"]
+# CMD ["bash"]

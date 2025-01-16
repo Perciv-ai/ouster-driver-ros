@@ -27,14 +27,14 @@ echo "export ROS_MASTER_URI=${ROS_MASTER_URI}" >> ~/.bashrc
 echo "export ROS_IP=${ROS_IP}" >> ~/.bashrc
 
 # Launch the ROS node
-#roslaunch chuhang_driver chuhang.launch
+roslaunch ouster_ros sensor.launch
 
-# Run any command passed as an argument in the background
-# if [ "$#" -ne 0 ]; then
-#   "$@" &
-# fi
+Run any command passed as an argument in the background
+if [ "$#" -ne 0 ]; then
+  "$@" &
+fi
 
-# # Keep the container alive
-# tail -f /dev/null
+# Keep the container alive
+tail -f /dev/null
 exec "$@"
 
